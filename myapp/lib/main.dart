@@ -9,6 +9,10 @@ class MyApp extends StatelessWidget {
   Widget build(context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        ),
       home: Scaffold(
         appBar: AppBar(
           title: Center(
@@ -16,11 +20,12 @@ class MyApp extends StatelessWidget {
           ),
           leading: Icon(Icons.menu_open),
         ),
-        body: Center(
+        body: SingleChildScrollView(
+          child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 30,),
+              SizedBox(height: 20,),
               Container(
                 child:CircleAvatar(
                   backgroundImage:AssetImage('asset/images/login.jpg'),
@@ -33,26 +38,34 @@ class MyApp extends StatelessWidget {
               // borderWidth: 5,
               // elevation: 2,
               // radius: 50,),
-              Center(    
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: "User Name",
-                    icon: Icon(Icons.account_box_rounded),
-                    border: OutlineInputBorder(),
+                 Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Center(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: "User Name",
+                        icon: Icon(Icons.account_box_rounded),
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 30,),
-              Center(
-                child: TextField(
-                    obscuringCharacter: "*",
-                    decoration: InputDecoration(
-                      labelText: "Password",
-                      icon: Icon(Icons.password),
-                      border: OutlineInputBorder(),
-                    )),
-              ),
-              SizedBox(height: 30,),
+
+              SizedBox(height: 20,),
+              Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Center(
+                    child: TextField(
+                        obscuringCharacter: "*",
+                        decoration: InputDecoration(
+                          labelText: "Password",
+                          icon: Icon(Icons.password),
+                          border: OutlineInputBorder(),
+                        )),
+                  ),
+                ),
+
+              SizedBox(height: 20,),
               Center(
                 child: ElevatedButton(
                   onPressed: () {}, 
@@ -62,6 +75,7 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
+       ),
       ),
     );
   }
