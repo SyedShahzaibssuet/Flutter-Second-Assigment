@@ -1,7 +1,7 @@
-# myapp
+# Flutter Log In Page
 
 A new Flutter project.
-
+Which is our second Assignment in Jawan Pakistan. and it is output is attached as a Screenshot with this repositry.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
